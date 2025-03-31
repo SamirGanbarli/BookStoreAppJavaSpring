@@ -40,8 +40,8 @@ public class OrderController {
         ).collect(Collectors.toList()));
     }
 
-    @PostMapping
-    public Order createOrder(@RequestParam UUID bookId) {
+    @PostMapping("/{bookId}")
+    public Order createOrder(@PathVariable UUID bookId) {
         return orderService.createOrder(bookId);
     }
 
